@@ -7,6 +7,8 @@ import ReactPlayer from 'react-player'
 import muteicon from './muteicon.png'
 import unmuteicon from './unmuteicon.png'
 import logo from './basedtvlogo.gif'
+import skippic from './skip.png'
+
 import PublitioAPI from 'publitio_js_sdk'
 // import vids from './vids.json'
 
@@ -25,19 +27,24 @@ let secretkey = process.env.REACT_APP_PUBLITIO_SECRET_KEY
 const publitio = new PublitioAPI(apikey, secretkey)
 
 const BasedTV = () => {
-  const [sources, setSources] = useState(['https://media.publit.io/file/h_720/basedtv-7.mp4']) 
+  const [sources, setSources] = useState(['https://media.publit.io/file/h_480/basedtv-7.mp4']) 
     // let sources = shuffle(vids)
     const [currentVid, setCurrentVid] = useState(sources[0])
     const [muteState, setMuteState] = useState(true)
     const [icon,setIcon] = useState(muteicon)
+    const [skip, setSkip] = useState(skippic)
 
     useEffect(() => {
 
       publitio.call('/files/list', 'GET', { offset: '0', limit: '100'})
       .then(response => { 
-        console.log(response)
-
-        let videolist = response.files.map((file) => file.url_short)
+        // console.log(response)
+        let videolist = response.files.map((file) => {
+          let vidurl = 'https://media.publit.io/file/h_480/'.concat(file.public_id).concat('.mp4')
+      console.log(vidurl)
+      return vidurl
+    })
+      console.log(videolist);
         let shuffledlist = shuffle(videolist) 
         setSources(shuffledlist)
         console.log(sources)
@@ -53,7 +60,7 @@ const BasedTV = () => {
         else setIcon(muteicon) 
     }
 
-    const handleEnded = () => {
+    const nextVid = () => {
         var index = sources.indexOf(currentVid) //starts at 0
         if (index === sources.length -1) index = 0
         else index ++
@@ -62,12 +69,16 @@ const BasedTV = () => {
         console.log('onEnded')
       }
       
+      const skipVid = () => {
+        nextVid()
+        setSkip('')
+      }
     return (
             <div className={classes.Container} >
             <ReactPlayer
             width='100vw'
             height='100vh'
-            onEnded={handleEnded}
+            onEnded={nextVid}
             controls={false}
             muted={muteState}    
             loop={false}
@@ -82,6 +93,10 @@ const BasedTV = () => {
 <div className={classes.Mutebutton}>
 <img src={icon} onClick={muteHandler} width='100%'/>
 </div>  
+<div className={classes.Skipbutton}> 
+<img src={skip} onClick={skipVid} width='100%'/>
+</div>
+
     </div>
     )
 }

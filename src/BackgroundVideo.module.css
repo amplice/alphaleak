@@ -31,10 +31,10 @@
     background-color:rgba(255, 255, 255,0.1);
     z-index:1;
     position: fixed;
-    bottom:20px;
-    right: 20px;
-    width: 5vw;
-    height: 5vw;
+    bottom:2vw;
+    right: 2vw;
+    width: 4vw;
+    height: 4vw;
     border: none;
     cursor: pointer;
     border-radius:50%;
@@ -49,10 +49,28 @@
     background-color:rgba(255, 255, 255,0);
     z-index:1;
     position: fixed;
-    top:20px;
-    right: 20px;
+    top:2vw;
+    right: 2vw;
     width: 5vw;
     height: 5vw;
     border: none;
     border-radius:50%;
+  }
+
+  .Skipbutton {
+    background-color:rgba(255, 255, 255,0);
+    z-index:1;
+    position: fixed;
+    bottom:7vw;
+    right: 2vw;
+    width: 4vw;
+    height: 4vw;
+    border: none;
+    border-radius:50%;
+    cursor: pointer;
+  }
+
+  .Skipbutton :hover {
+    background-color:rgba(255, 255, 255, 0.05);
+    border-radius:75%;
   }
