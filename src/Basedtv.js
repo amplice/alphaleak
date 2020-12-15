@@ -8,6 +8,8 @@ import muteicon from './muteicon.png'
 import unmuteicon from './unmuteicon.png'
 import logo from './basedtvlogo.gif'
 import skippic from './skip.png'
+import emptypic from './empty.png'
+
 
 import PublitioAPI from 'publitio_js_sdk'
 // import vids from './vids.json'
@@ -71,7 +73,7 @@ const BasedTV = () => {
       
       const skipVid = () => {
         nextVid()
-        setSkip('')
+        setSkip(emptypic)
       }
     return (
             <div className={classes.Container} >
