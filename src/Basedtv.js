@@ -21,8 +21,6 @@ function shuffle(a) {
 
 let apikey = process.env.REACT_APP_PUBLITIO_PUBLIC_KEY
 let secretkey = process.env.REACT_APP_PUBLITIO_SECRET_KEY
-console.log(apikey);
-console.log(secretkey);
 
 const publitio = new PublitioAPI(apikey, secretkey)
 
