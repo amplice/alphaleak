@@ -11,8 +11,6 @@ import Faketwap from './Faketwap'
 import Strat from './Strat'
 import BasedTV from './Basedtv'
 
-// import Faketwap from './Faketwap'
-// import getbasedprice from './getbasedcumulativeprice'
 
 import {
   BrowserRouter as Router,
