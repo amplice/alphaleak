@@ -29,7 +29,7 @@ let secretkey = process.env.REACT_APP_PUBLITIO_SECRET_KEY
 const publitio = new PublitioAPI(apikey, secretkey)
 
 const BasedTV = () => {
-  const [sources, setSources] = useState(['https://media.publit.io/file/h_480/basedtv-7.mp4']) 
+  const [sources, setSources] = useState(['https://media.publit.io/file/h_480/basedtvturnon.mp4']) 
     // let sources = shuffle(vids)
     const [currentVid, setCurrentVid] = useState(sources[0])
     const [muteState, setMuteState] = useState(true)
@@ -40,16 +40,17 @@ const BasedTV = () => {
 
       publitio.call('/files/list', 'GET', { offset: '0', limit: '100'})
       .then(response => { 
-        // console.log(response)
         let videolist = response.files.map((file) => {
           let vidurl = 'https://media.publit.io/file/h_480/'.concat(file.public_id).concat('.mp4')
-      console.log(vidurl)
-      return vidurl
+        return vidurl
     })
-      console.log(videolist);
-        let shuffledlist = shuffle(videolist) 
+    console.log(videolist);
+    let filteredlist = videolist.filter((vidurl)=> vidurl!='https://media.publit.io/file/h_480/basedtvturnon.mp4')
+    console.log(filteredlist);
+      // console.log(videolist);
+        let shuffledlist = shuffle(filteredlist) 
         setSources(shuffledlist)
-        console.log(sources)
+        // console.log(sources)
         // setCurrentVid(shuffledlist[0])  
     
        })
@@ -58,6 +59,7 @@ const BasedTV = () => {
 
     const muteHandler = () => {
         setMuteState(!muteState)
+        console.log(sources);
         if (muteState) setIcon(unmuteicon) 
         else setIcon(muteicon) 
     }
@@ -67,7 +69,7 @@ const BasedTV = () => {
         if (index === sources.length -1) index = 0
         else index ++
         console.log(index)
-        setCurrentVid(sources[index])
+        setCurrentVid(sources[index]) 
         console.log('onEnded')
       }
       
