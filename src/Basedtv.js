@@ -33,7 +33,7 @@ const baseurl = 'https://api.linode.com/v4/object-storage/buckets/us-east-1/base
 const request = axios.get(baseurl + 'object-list',config)
 
 const BasedTV = () => {
-  const [sources, setSources] = useState(['https://media.publit.io/file/h_480/basedtvturnon.mp4']) 
+  const [sources, setSources] = useState(['https://media.publit.io/file/h_480/basedtvon2.mp4']) 
     // let sources = shuffle(vids)  
     const [currentVid, setCurrentVid] = useState(sources[0])
     const [muteState, setMuteState] = useState(true)
