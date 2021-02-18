@@ -10,6 +10,7 @@ import History from './Rebasehistory'
 import Faketwap from './Faketwap'
 import Strat from './Strat'
 import BasedTV from './Basedtv'
+// import Livetx from './livetx'
 
 
 import {
@@ -52,6 +53,9 @@ const App = () => {
         <Route path="/basedtv">
           <BasedTV />
         </Route>
+        {/* <Route path="/livetx">
+          <Livetx />
+        </Route> */}
         <Route path='/nft' component={() => { 
      window.location.replace('https://app.rarible.com/token/0x3ac131f616014bde3e0bc9fa67d05deb76af0d88:1:0x4161eab0b7d555298adc4f40fa0c524dd2e596fc'); 
      return null;

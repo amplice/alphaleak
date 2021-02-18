@@ -30,7 +30,7 @@ let config = {
 
 const baseurl = 'https://api.linode.com/v4/object-storage/buckets/us-east-1/basedtv/'
 
-const request = axios.get(baseurl + 'object-list',config)
+const request = axios.get(baseurl + 'object-list', config)
 
 const BasedTV = () => {
   const [sources, setSources] = useState(['https://media.publit.io/file/h_480/basedtvon2.mp4']) 
@@ -42,11 +42,28 @@ const BasedTV = () => {
 
     useEffect(() => {
       let urllist = []
+      let templist = []
       request.then(response => {
-        return response.data.data
+        // console.log(response); 
+        return response.data
+        })
+        .then(async data => {
+          templist = templist.concat(data.data)
+          if (data.is_truncated) {
+            let config2  = {
+              headers: {
+                'Authorization': authheader
+              },
+              params: {marker : data.next_marker}
+            }
+            let request2 = axios.get(baseurl + 'object-list', config2)
+            let response2 = await request2
+            templist = templist.concat(response2.data.data)
+            console.log(templist)
+            return templist
+          }
         })
         .then(data => {
-
           urllist = data.map(data => 'https://basedtv.us-east-1.linodeobjects.com/' + data.name)
           urllist = shuffle(urllist)
           setSources(sources.concat(urllist))

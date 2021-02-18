@@ -32,4 +32,5 @@ alphaleak and example.code-workspace
 /src/basedtvpublitio.js
 /src/apikeys.txt
 /src/signedurlscode.js
+/src/livetx.js
 .eslintcache
