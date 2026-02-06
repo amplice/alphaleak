@@ -79,7 +79,7 @@ const Img = ({ src }) => <img src={src} alt="" style={{ maxWidth: '100%', width:
 
 export default function Storytime() {
   return (
-    <main style={{ maxWidth: 600, margin: '0 auto', padding: '16px' }}>
+    <main style={{ maxWidth: 600, padding: '16px' }}>
       <p><i>
         Everything in life is storytelling. How we think the world works and who we are is a story we tell ourselves 
         because our broken pattern recognizing brains can't handle genuine chaos.
