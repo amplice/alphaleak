@@ -28,9 +28,9 @@ const projects = [
 
 export default function Home() {
   return (
-    <main style={{ maxWidth: 600, margin: '0 auto', padding: '16px' }}>
+    <main style={{ maxWidth: 600, padding: '16px' }}>
       <p>
-        <a href="https://x.com/amplice" target="_blank" rel="noopener noreferrer">@amplice</a>
+        <a href="https://x.com/amplice_eth" target="_blank" rel="noopener noreferrer">@amplice_eth</a>
       </p>
       
       <hr style={{ border: 'none', borderTop: '1px solid #444', margin: '16px 0' }} />

@@ -57,7 +57,7 @@ function Footer() {
   if (isFullscreen) return null
   
   return (
-    <footer style={{ padding: '16px', textAlign: 'center' }}>
+    <footer style={{ padding: '16px' }}>
       <p>stay BASED</p>
       <img src={footerGif} alt="" style={{ maxWidth: '100%', width: 500, marginTop: 8 }} />
     </footer>
