@@ -28,28 +28,28 @@ const projects = [
 
 export default function Home() {
   return (
-    <main style={{ maxWidth: 700, margin: '0 auto', padding: '40px 20px' }}>
-      <p style={{ marginBottom: 40 }}>
+    <main style={{ maxWidth: 700, margin: '0 auto', padding: '24px 16px 60px' }}>
+      <p style={{ marginBottom: 32 }}>
         <a href="https://x.com/amplice" target="_blank" rel="noopener noreferrer">@amplice</a>
       </p>
 
-      <h2 style={{ marginBottom: 24, fontWeight: 400 }}>Projects</h2>
+      <h2 style={{ marginBottom: 20, fontWeight: 400, fontSize: '1.25em' }}>Projects</h2>
       
       {projects.map((p) => (
-        <div key={p.name} style={{ marginBottom: 28 }}>
+        <div key={p.name} style={{ marginBottom: 24 }}>
           <a 
             href={p.url} 
             target="_blank" 
             rel="noopener noreferrer"
-            style={{ fontSize: '1.1em', color: '#fff' }}
+            style={{ fontSize: '1.05em', color: '#fff' }}
           >
             {p.name}
           </a>
-          <p style={{ margin: '4px 0 0', color: '#666', fontSize: '0.9em' }}>{p.desc}</p>
+          <p style={{ margin: '4px 0 0', color: '#666', fontSize: '0.9em', lineHeight: 1.5 }}>{p.desc}</p>
         </div>
       ))}
 
-      <p style={{ marginTop: 60, color: '#444', fontSize: '0.85em' }}>
+      <p style={{ marginTop: 48, color: '#444', fontSize: '0.85em' }}>
         More: storytime, moonbasecity, basedTV ↑
       </p>
     </main>

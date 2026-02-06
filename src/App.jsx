@@ -23,19 +23,22 @@ function Nav() {
 
   return (
     <nav style={{
-      padding: isFullscreen ? '10px 20px' : '20px',
+      padding: isFullscreen ? '10px 16px' : '16px',
       position: isFullscreen ? 'absolute' : 'static',
       zIndex: 10,
-      background: isFullscreen ? 'rgba(0,0,0,0.5)' : 'transparent',
+      background: isFullscreen ? 'rgba(0,0,0,0.7)' : 'transparent',
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: '4px 0',
     }}>
       {nav.map((item, i) => (
-        <span key={item.text}>
+        <span key={item.text} style={{ whiteSpace: 'nowrap' }}>
           {item.external ? (
             <a href={item.link} target="_blank" rel="noopener noreferrer">{item.text}</a>
           ) : (
             <Link to={item.link}>{item.text}</Link>
           )}
-          {i < nav.length - 1 && <span style={{ margin: '0 8px', color: '#444' }}>|</span>}
+          {i < nav.length - 1 && <span style={{ margin: '0 6px', color: '#444' }}>|</span>}
         </span>
       ))}
     </nav>

@@ -75,11 +75,11 @@ import j80 from '../tragicjoe/epilogue/joseph80.png'
 import j81 from '../tragicjoe/epilogue/joseph81.png'
 import jend from '../tragicjoe/epilogue/josephend.png'
 
-const Img = ({ src }) => <img src={src} alt="" style={{ maxWidth: 500, display: 'block', margin: '16px 0' }} />
+const Img = ({ src }) => <img src={src} alt="" style={{ maxWidth: '100%', width: 500, display: 'block', margin: '16px 0' }} />
 
 export default function Storytime() {
   return (
-    <main style={{ maxWidth: 700, margin: '0 auto', padding: '20px' }}>
+    <main style={{ maxWidth: 700, margin: '0 auto', padding: '16px', paddingBottom: 60 }}>
       <p style={{ fontStyle: 'italic', marginBottom: 20 }}>
         Everything in life is storytelling. How we think the world works and who we are is a story we tell ourselves 
         because our broken pattern recognizing brains can't handle genuine chaos.
