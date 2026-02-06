@@ -3,6 +3,9 @@ import Home from './pages/Home'
 import Storytime from './pages/Storytime'
 import Moonbasecity from './pages/Moonbasecity'
 import BasedTV from './pages/BasedTV'
+import cityGif from './assets/based-city.gif'
+import logoImg from './assets/astrobased.png'
+import footerGif from './assets/based-akane.gif'
 import './index.css'
 
 const nav = [
@@ -23,7 +26,7 @@ function Nav() {
 
   return (
     <nav style={{
-      padding: isFullscreen ? '8px' : '8px',
+      padding: '8px',
       position: isFullscreen ? 'absolute' : 'static',
       zIndex: 10,
       background: isFullscreen ? 'rgba(0,0,0,0.8)' : 'transparent',
@@ -37,8 +40,27 @@ function Nav() {
           )}
           {i < nav.length - 1 && ' | '}
         </span>
-      ))} ]
+      ))} ] <img src={logoImg} alt="" style={{ width: 30, verticalAlign: 'middle' }} />
+      {!isFullscreen && (
+        <div style={{ marginTop: 8 }}>
+          <img src={cityGif} alt="" style={{ maxWidth: '100%', width: 450 }} />
+        </div>
+      )}
     </nav>
+  )
+}
+
+function Footer() {
+  const location = useLocation()
+  const isFullscreen = location.pathname === '/moonbasecity' || location.pathname === '/basedtv'
+  
+  if (isFullscreen) return null
+  
+  return (
+    <footer style={{ padding: '16px', textAlign: 'center' }}>
+      <p>stay BASED</p>
+      <img src={footerGif} alt="" style={{ maxWidth: '100%', width: 500, marginTop: 8 }} />
+    </footer>
   )
 }
 
@@ -52,6 +74,7 @@ export default function App() {
         <Route path="/moonbasecity" element={<Moonbasecity />} />
         <Route path="/basedtv" element={<BasedTV />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }
