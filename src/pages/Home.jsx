@@ -28,29 +28,30 @@ const projects = [
 
 export default function Home() {
   return (
-    <main style={{ maxWidth: 700, margin: '0 auto', padding: '24px 16px 60px' }}>
-      <p style={{ marginBottom: 32 }}>
+    <main style={{ maxWidth: 600, margin: '0 auto', padding: '16px' }}>
+      <p>
         <a href="https://x.com/amplice" target="_blank" rel="noopener noreferrer">@amplice</a>
       </p>
-
-      <h2 style={{ marginBottom: 20, fontWeight: 400, fontSize: '1.25em' }}>Projects</h2>
       
-      {projects.map((p) => (
-        <div key={p.name} style={{ marginBottom: 24 }}>
-          <a 
-            href={p.url} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            style={{ fontSize: '1.05em', color: '#fff' }}
-          >
-            {p.name}
-          </a>
-          <p style={{ margin: '4px 0 0', color: '#666', fontSize: '0.9em', lineHeight: 1.5 }}>{p.desc}</p>
-        </div>
-      ))}
+      <hr style={{ border: 'none', borderTop: '1px solid #444', margin: '16px 0' }} />
 
-      <p style={{ marginTop: 48, color: '#444', fontSize: '0.85em' }}>
-        More: storytime, moonbasecity, basedTV ↑
+      <h2>Projects</h2>
+      
+      <ul>
+        {projects.map((p) => (
+          <li key={p.name} style={{ marginBottom: 12 }}>
+            <a href={p.url} target="_blank" rel="noopener noreferrer">
+              {p.name}
+            </a>
+            {' - '}{p.desc}
+          </li>
+        ))}
+      </ul>
+
+      <hr style={{ border: 'none', borderTop: '1px solid #444', margin: '16px 0' }} />
+      
+      <p>
+        <i>see also: storytime, moonbasecity, basedTV</i>
       </p>
     </main>
   )

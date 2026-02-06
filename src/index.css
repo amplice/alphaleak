@@ -11,20 +11,22 @@ html, body, #root {
 body {
   background: #000;
   color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.6;
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1.5;
   font-size: 16px;
-  -webkit-font-smoothing: antialiased;
 }
 
 a {
-  color: #888;
-  text-decoration: none;
-  transition: color 0.2s;
+  color: #99f;
+  text-decoration: underline;
 }
 
 a:hover {
-  color: #fff;
+  color: #ccf;
+}
+
+a:visited {
+  color: #c9f;
 }
 
 img {
