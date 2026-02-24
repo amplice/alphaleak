@@ -14,16 +14,7 @@ const projects = [
     url: 'https://contextwar.alphaleak.xyz',
     desc: 'Competitive prompt injection on Base L2. Bid on word slots, craft prompts, trick the oracle.'
   },
-  {
-    name: 'BasedChat',
-    url: 'https://basedchat.alphaleak.xyz',
-    desc: 'On-chain bonded chat. $1 USDC per message.'
-  },
-  {
-    name: 'Shellsword',
-    url: 'https://clawball.alphaleak.xyz/shellsword/',
-    desc: '1D fencing with simultaneous blind turns.'
-  }
+
 ]
 
 export default function Home() {

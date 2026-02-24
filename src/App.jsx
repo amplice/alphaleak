@@ -16,8 +16,7 @@ const nav = [
   { text: 'hardmode', link: 'https://hardmode-production.up.railway.app', external: true },
   { text: 'bug fight', link: 'http://142.93.44.112:8080/', external: true },
   { text: 'context war', link: 'https://contextwar.alphaleak.xyz', external: true },
-  { text: 'basedchat', link: 'https://basedchat.alphaleak.xyz', external: true },
-  { text: 'shellsword', link: 'https://clawball.alphaleak.xyz/shellsword/', external: true },
+
 ]
 
 function Nav() {
